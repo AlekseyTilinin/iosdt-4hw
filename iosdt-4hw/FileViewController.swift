@@ -32,6 +32,8 @@ class FileViewController: UIViewController, UITableViewDelegate, UIImagePickerCo
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        
+        content = FileManagerService().contentsOfDirectory(currentDirectory)
 
         let createFolderItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createFolder))
         let addPhotoItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(addPhoto))
