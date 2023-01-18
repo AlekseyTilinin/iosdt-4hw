@@ -32,8 +32,6 @@ class FileViewController: UIViewController, UITableViewDelegate, UIImagePickerCo
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
-        
-        content = FileManagerService().contentsOfDirectory(currentDirectory)
 
         let createFolderItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createFolder))
         let addPhotoItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(addPhoto))
@@ -48,6 +46,23 @@ class FileViewController: UIViewController, UITableViewDelegate, UIImagePickerCo
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let sort = UserDefaults.standard.bool(forKey: "sortStatus")
+        if sort {
+            content.sort(by: <)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        } else {
+            content.sort(by: >)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @objc
