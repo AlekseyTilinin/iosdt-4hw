@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var fileTabNavigationController: UINavigationController!
     var settingsTabNavigationController: UINavigationController!
+    var passwordNavigationController : UINavigationController!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -23,9 +24,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         fileTabNavigationController = UINavigationController(rootViewController: FileViewController())
         settingsTabNavigationController = UINavigationController(rootViewController: SettingsViewController())
+        passwordNavigationController = UINavigationController(rootViewController: PasswordViewController())
         
         tabBarController.viewControllers = [fileTabNavigationController, settingsTabNavigationController]
         
+
         let item1 = UITabBarItem(title: "Files", image: UIImage(systemName: "folder.circle"), tag: 0)
         let item2 = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape.2"), tag: 1)
         
@@ -33,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         settingsTabNavigationController.tabBarItem = item2
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = tabBarController
+        window.rootViewController = passwordNavigationController
         window.makeKeyAndVisible()
         self.window = window
     }

@@ -14,6 +14,8 @@
 		5B535DB82968CC2100DC4618 /* FileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B535DB72968CC2100DC4618 /* FileManagerService.swift */; };
 		5B535DBA2968CF8C00DC4618 /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B535DB92968CF8C00DC4618 /* FileViewController.swift */; };
 		5B535DBC2968D06500DC4618 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B535DBB2968D06500DC4618 /* SettingsViewController.swift */; };
+		5B535DCF2975AF6200DC4618 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 5B535DCE2975AF6200DC4618 /* KeychainAccess */; };
+		5B535DD12975B08300DC4618 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B535DD02975B08300DC4618 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,7 @@
 		5B535DB72968CC2100DC4618 /* FileManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerService.swift; sourceTree = "<group>"; };
 		5B535DB92968CF8C00DC4618 /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
 		5B535DBB2968D06500DC4618 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5B535DD02975B08300DC4618 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B535DCF2975AF6200DC4618 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 				5B535DB72968CC2100DC4618 /* FileManagerService.swift */,
 				5B535DB92968CF8C00DC4618 /* FileViewController.swift */,
 				5B535DBB2968D06500DC4618 /* SettingsViewController.swift */,
+				5B535DD02975B08300DC4618 /* PasswordViewController.swift */,
 				5B535DAC2968C9B300DC4618 /* Assets.xcassets */,
 				5B535DAE2968C9B300DC4618 /* LaunchScreen.storyboard */,
 				5B535DB12968C9B300DC4618 /* Info.plist */,
@@ -86,6 +91,9 @@
 			dependencies = (
 			);
 			name = "iosdt-4hw";
+			packageProductDependencies = (
+				5B535DCE2975AF6200DC4618 /* KeychainAccess */,
+			);
 			productName = "iosdt-4hw";
 			productReference = 5B535DA02968C9B200DC4618 /* iosdt-4hw.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 5B535D972968C9B200DC4618;
+			packageReferences = (
+				5B535DCD2975AF6200DC4618 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 5B535DA12968C9B200DC4618 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,6 +156,7 @@
 				5B535DBA2968CF8C00DC4618 /* FileViewController.swift in Sources */,
 				5B535DBC2968D06500DC4618 /* SettingsViewController.swift in Sources */,
 				5B535DB82968CC2100DC4618 /* FileManagerService.swift in Sources */,
+				5B535DD12975B08300DC4618 /* PasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B535DCD2975AF6200DC4618 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B535DCE2975AF6200DC4618 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B535DCD2975AF6200DC4618 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B535D982968C9B200DC4618 /* Project object */;
 }
